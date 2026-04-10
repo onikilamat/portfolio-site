@@ -1,9 +1,13 @@
+import Navigation from "@/components/Navigation";
+import WorkGrid from "@/components/WorkGrid";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <Navigation />
+      <main className="px-[30px] py-[30px]">
+        <WorkGrid />
+      </main>
+    </>
   );
 }
