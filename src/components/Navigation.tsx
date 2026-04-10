@@ -17,16 +17,17 @@ export default function Navigation() {
   return (
     <header
       className="flex justify-between items-start bg-white w-full sticky top-0 z-50"
-      style={{ padding: "20px 30px" }}
+      style={{ padding: "20px 30px", fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
     >
       <Link
         href="/"
-        className="text-black no-underline font-normal whitespace-nowrap"
+        className="no-underline font-normal whitespace-nowrap flex flex-col"
         style={{ fontSize: "13px" }}
       >
-        jaime ludeña
+        <span className="text-black">jaime ludeña</span>
+        <span style={{ color: "#ff0000" }}>independent creative / cw</span>
       </Link>
-      <nav className="flex gap-5 flex-wrap justify-end">
+      <nav className="flex gap-5 flex-wrap justify-end" style={{ paddingTop: "2px" }}>
         {navLinks.map(({ label, href }) => (
           <Link
             key={href}
@@ -35,7 +36,7 @@ export default function Navigation() {
               "text-black no-underline",
               pathname === href && "underline"
             )}
-            style={{ fontSize: "13px" }}
+            style={{ fontSize: "13px", fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
           >
             {label}
           </Link>
