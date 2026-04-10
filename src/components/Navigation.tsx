@@ -24,8 +24,8 @@ export default function Navigation() {
         className="no-underline font-normal whitespace-nowrap flex flex-col"
         style={{ fontSize: "13px" }}
       >
-        <span className="text-black">jaime ludeña</span>
-        <span style={{ color: "#ff0000" }}>independent creative / cw</span>
+        <span className="text-black">oğuzcan önver</span>
+        <span style={{ color: "#ff0000" }}>creative group head / cw</span>
       </Link>
       <nav className="flex gap-5 flex-wrap justify-end" style={{ paddingTop: "2px" }}>
         {navLinks.map(({ label, href }) => (
