@@ -30,6 +30,12 @@ const sections: { label: string; lines: string[] }[] = [
   },
 ];
 
+const social = [
+  { label: "instagram.com/onikilamat", href: "https://www.instagram.com/onikilamat/" },
+  { label: "linkedin.com/in/oguzcanonver", href: "https://www.linkedin.com/in/oguzcanonver/" },
+  { label: "x.com/cryptopoetx", href: "https://x.com/cryptopoetx" },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -66,6 +72,32 @@ export default function AboutPage() {
             </p>
           </div>
         ))}
+
+        <div className="mb-10">
+          <p className="mb-2 text-[13px]">contact</p>
+          <p className="text-[13px] leading-[1.8]">
+            <a href="mailto:oguzcanonver@gmail.com" className="block text-black no-underline hover:underline">
+              oguzcanonver@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <div className="mb-10">
+          <p className="mb-2 text-[13px]">social</p>
+          <p className="text-[13px] leading-[1.8]">
+            {social.map((s) => (
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-black no-underline hover:underline"
+              >
+                {s.label}
+              </a>
+            ))}
+          </p>
+        </div>
       </main>
     </>
   );

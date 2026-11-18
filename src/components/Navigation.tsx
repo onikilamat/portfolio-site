@@ -7,8 +7,6 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "_work", href: "/" },
   { label: "_about", href: "/about" },
-  { label: "_awards", href: "/awards" },
-  { label: "_personal projects", href: "/personal-projects" },
 ] as const;
 
 export default function Navigation() {
