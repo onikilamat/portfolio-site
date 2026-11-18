@@ -137,7 +137,7 @@ export const projects: Project[] = [
     client: "doyuyo!",
     image: "/images/doyuyo-bull.jpg",
     imageClass: "object-[50%_20%]",
-    video: { type: "instagram", id: "DM-t_EzI7wA" },
+    video: { type: "mp4", id: "doyuyo-bull.mp4" },
     credits: [
       { label: "film", value: "meet me at doyuyo!, by the bull" },
       { label: "client", value: "doyuyo!" },
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     title: "social media content",
     client: "lems studio",
     image: "/images/lems-studio.jpg",
-    video: { type: "instagram", id: "DV33SzajGOV" },
+    video: { type: "mp4", id: "lems-studio.mp4" },
     credits: [
       { label: "client", value: "lems studio" },
       { label: "format", value: "ai animation, social media content" },
