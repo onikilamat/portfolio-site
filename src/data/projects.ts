@@ -167,6 +167,19 @@ export const projects: Project[] = [
       "this march 8, we recalculated the value of invisible labour.",
     ],
   },
+  {
+    slug: "lems-studio-social-content",
+    title: "social media content",
+    client: "lems studio",
+    image: "/images/lems-studio.jpg",
+    video: { type: "instagram", id: "DV33SzajGOV" },
+    credits: [
+      { label: "client", value: "lems studio" },
+      { label: "format", value: "ai animation, social media content" },
+      { label: "role", value: "ai director" },
+    ],
+    description: ["social media content for lems studio, directed and produced with ai."],
+  },
 ];
 
 export function getProject(slug: string) {
