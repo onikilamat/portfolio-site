@@ -55,6 +55,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
           <VideoEmbed project={project} />
 
+          {project.gallery && (
+            <div className="flex flex-col gap-[30px]">
+              {project.gallery.map((src) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={src} src={src} alt={`${project.title} / ${project.client}`} className="block h-auto w-full max-w-[1000px]" />
+              ))}
+            </div>
+          )}
+
           <div className="mt-16 text-[13px] leading-[1.8]">
             {others.length > 0 && <p className="m-0 mb-2 text-[#888]">more work</p>}
             {others.map((p) => (

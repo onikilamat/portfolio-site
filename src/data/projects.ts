@@ -4,10 +4,13 @@
 //   "youtube"   -> id = the part after "watch?v=" in a YouTube link
 //   "instagram" -> id = the code in instagram.com/reel/<code>/
 //   "linkedin"  -> id = the long number in ...urn:li:activity:<number>/
+//   "mp4"       -> id = file name in /public/videos, e.g. "sugur.mp4"
+// video is optional: image-only projects use gallery instead.
+// gallery: extra images shown on the project page.
 // image: cover in /public/images. Leave out to show a plain title tile.
 // imageClass: where the square crop sits, e.g. "object-right" to keep text on the right in frame.
 
-export type VideoType = "youtube" | "instagram" | "linkedin";
+export type VideoType = "youtube" | "instagram" | "linkedin" | "mp4";
 
 export interface Project {
   slug: string;
@@ -15,7 +18,8 @@ export interface Project {
   client: string;
   image?: string;
   imageClass?: string;
-  video: { type: VideoType; id: string };
+  video?: { type: VideoType; id: string };
+  gallery?: string[];
   credits: { label: string; value: string }[];
   description: string[];
 }
@@ -68,6 +72,27 @@ export const projects: Project[] = [
     ],
     description: [
       "with ai, we travelled back to the ancient city of pergamon and followed one question: how much easier would things have been if the financing solutions albaraka leasing offers had existed back then?",
+    ],
+  },
+  {
+    slug: "decathlon-catalogue-from-trash",
+    title: "catalogue from trash",
+    client: "decathlon",
+    image: "/images/decathlon-1.jpg",
+    imageClass: "object-right",
+    gallery: ["/images/decathlon-1.jpg", "/images/decathlon-2.jpg"],
+    credits: [
+      { label: "campaign", value: "catalogue from trash (çöpten katalog)" },
+      { label: "client", value: "decathlon" },
+      { label: "occasion", value: "world cleanup day" },
+      { label: "format", value: "ai-generated catalogue (midjourney), instagram + youtube" },
+      { label: "result", value: "4.5 million unique users reached" },
+    ],
+    description: [
+      "every year decathlon organises clean-up events for world cleanup day. this year we wanted to take the brand's motto, \"no sport without nature\", to a much wider audience — and use digital to do it.",
+      "with midjourney, we visualised the world we would have to do sport in if we keep polluting nature. we placed decathlon's signature products into these dystopian scenes and turned them into an alternative catalogue: the catalogue from trash.",
+      "the campaign ran on instagram, supported on youtube by a film of volunteers cleaning up nature.",
+      "the shock of the ai catalogue, together with a creative media strategy, reached 4.5 million unique users and made the link between sport and protecting nature impossible to miss.",
     ],
   },
   {
@@ -124,7 +149,9 @@ export function getProject(slug: string) {
 }
 
 export function videoLink(p: Project) {
+  if (!p.video) return null;
   const { type, id } = p.video;
+  if (type === "mp4") return null;
   if (type === "youtube") return `https://www.youtube.com/watch?v=${id}`;
   if (type === "instagram") return `https://www.instagram.com/reel/${id}/`;
   return `https://www.linkedin.com/feed/update/urn:li:activity:${id}/`;

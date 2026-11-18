@@ -1,16 +1,29 @@
 import { type Project, videoLink } from "@/data/projects";
 
-const linkLabel = {
+const linkLabel: Record<string, string> = {
   youtube: "watch on youtube",
   instagram: "watch on instagram",
   linkedin: "watch on linkedin",
-} as const;
+};
 
 export default function VideoEmbed({ project }: { project: Project }) {
+  if (!project.video) return null;
   const { type, id } = project.video;
+  const link = videoLink(project);
 
   let frame: React.ReactNode;
-  if (type === "youtube") {
+  if (type === "mp4") {
+    frame = (
+      <video
+        src={`/videos/${id}`}
+        poster={project.image}
+        controls
+        playsInline
+        preload="metadata"
+        className="block w-full max-h-[85vh] bg-black"
+      />
+    );
+  } else if (type === "youtube") {
     frame = (
       <div className="relative aspect-video w-full bg-black">
         <iframe
@@ -47,9 +60,10 @@ export default function VideoEmbed({ project }: { project: Project }) {
   return (
     <div>
       {frame}
+      {link && (
       <p className="m-0 mt-3 text-[13px]">
         <a
-          href={videoLink(project)}
+          href={link}
           target="_blank"
           rel="noopener noreferrer"
           className="text-black no-underline hover:underline"
@@ -57,6 +71,7 @@ export default function VideoEmbed({ project }: { project: Project }) {
           {linkLabel[type]} →
         </a>
       </p>
+      )}
     </div>
   );
 }
