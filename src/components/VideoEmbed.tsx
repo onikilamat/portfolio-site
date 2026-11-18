@@ -20,7 +20,7 @@ export default function VideoEmbed({ project }: { project: Project }) {
         controls
         playsInline
         preload="metadata"
-        className="block w-full max-h-[85vh] bg-black"
+        className="block h-auto max-h-[85vh] w-auto max-w-full bg-black"
       />
     );
   } else if (type === "youtube") {

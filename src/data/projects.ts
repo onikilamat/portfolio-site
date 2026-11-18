@@ -86,6 +86,7 @@ export const projects: Project[] = [
       { label: "client", value: "decathlon" },
       { label: "occasion", value: "world cleanup day" },
       { label: "format", value: "ai-generated catalogue (midjourney), instagram + youtube" },
+      { label: "role", value: "creative idea" },
       { label: "result", value: "4.5 million unique users reached" },
     ],
     description: [
@@ -99,7 +100,8 @@ export const projects: Project[] = [
     slug: "lucha-libre-masks-documentary",
     title: "what do i have to do with kanye west?",
     client: "documentary teaser",
-    video: { type: "linkedin", id: "7466436094058930176" },
+    image: "/images/lucha-libre.jpg",
+    video: { type: "mp4", id: "lucha-libre-teaser.mp4" },
     credits: [
       { label: "film", value: "lucha libre masks — documentary (teaser)" },
       { label: "format", value: "ai + live action, experimental documentary" },
@@ -116,7 +118,8 @@ export const projects: Project[] = [
     slug: "sugur-jewellery-ai-film",
     title: "fashion jewellery ai film",
     client: "sugur jewellery",
-    video: { type: "linkedin", id: "7460710610415067137" },
+    image: "/images/sugur.jpg",
+    video: { type: "mp4", id: "sugur.mp4" },
     credits: [
       { label: "film", value: "fashion jewellery ai film" },
       { label: "client", value: "sugur jewellery" },
@@ -129,7 +132,9 @@ export const projects: Project[] = [
     slug: "alan-medya-march-8",
     title: "recalculating invisible labour",
     client: "alan medya",
-    video: { type: "linkedin", id: "7436381965160751105" },
+    image: "/images/alan-medya.jpg",
+    imageClass: "object-left",
+    video: { type: "mp4", id: "alan-medya.mp4" },
     credits: [
       { label: "film", value: "recalculating invisible labour — international women's day" },
       { label: "client", value: "alan medya" },
