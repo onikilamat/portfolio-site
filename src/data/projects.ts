@@ -129,6 +129,25 @@ export const projects: Project[] = [
     description: ["a fashion jewellery film for sugur jewellery, generated and animated with ai."],
   },
   {
+    slug: "asperox-march-8",
+    title: "an unwritten rule",
+    client: "asperox",
+    image: "/images/asperox.jpg",
+    imageClass: "object-[50%_78%]",
+    video: { type: "mp4", id: "asperox.mp4" },
+    credits: [
+      { label: "film", value: "an unwritten rule — international women's day" },
+      { label: "client", value: "asperox" },
+      { label: "format", value: "full ai film, vertical" },
+      { label: "role", value: "idea, script, production, edit" },
+    ],
+    description: [
+      "an unwritten rule. care, cleaning, order, patience… a weight that sits on women's shoulders.",
+      "as a man, breaking these patterns was something i struggled with too.",
+      "with this film we wanted to talk about invisible labour, and to remind everyone of a simple truth: shared responsibility at home makes life equal.",
+    ],
+  },
+  {
     slug: "alan-medya-march-8",
     title: "recalculating invisible labour",
     client: "alan medya",
