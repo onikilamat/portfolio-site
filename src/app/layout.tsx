@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "jaime ludeña",
-  description: "independent creative / cw",
+  title: "oğuzcan önver",
+  description: "ai filmmaker & visual artist",
 };
 
 export default function RootLayout({

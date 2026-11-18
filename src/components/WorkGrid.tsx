@@ -1,17 +1,5 @@
 import Link from "next/link";
-
-interface Project {
-  title: string;
-  client: string;
-  slug: string;
-  image: string | null;
-}
-
-const projects: Project[] = [
-  { title: "meet marina prieto", client: "jcdecaux", slug: "meetmarinaprieto", image: "/images/meet-marina-prieto.jpg" },
-  { title: "alcaraz signs", client: "netflix", slug: "the-alcaraz-signature-netflix", image: "/images/alcaraz-signs.jpeg" },
-  { title: "starring bars", client: "heineken", slug: "starring-bars-heineken", image: "/images/starring-bars.png" },
-];
+import { projects } from "@/data/projects";
 
 export default function WorkGrid() {
   return (
@@ -24,19 +12,12 @@ export default function WorkGrid() {
           style={{ textDecoration: "none" }}
         >
           {/* Background / image */}
-          {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div
-              className="w-full h-full"
-              style={{ backgroundColor: "#1a1a1a" }}
-            />
-          )}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={project.image}
+            alt={`${project.title} / ${project.client}`}
+            className="w-full h-full object-cover"
+          />
 
           {/* Hover overlay */}
           <div
