@@ -1,62 +1,71 @@
 import Navigation from "@/components/Navigation";
 
 export const metadata = {
-  title: "about — jaime ludeña",
-  description: "spanish creative/copywriter from getafe (claims madrid). work recognized at cannes lions, d&ad, and the one show.",
+  title: "about — oğuzcan önver",
+  description:
+    "copywriter turned creative group head turned ai filmmaker. ten years in advertising, 30+ awards, five years making ai films for fashion and brands.",
 };
+
+const sections: { label: string; lines: string[] }[] = [
+  {
+    label: "what i do",
+    lines: [
+      "ai video projects, end to end — idea, script, generation, edit, delivery",
+      "turning advertising campaigns into ai productions",
+      "fashion films and brand content",
+    ],
+  },
+  {
+    label: "background",
+    lines: [
+      "ai filmmaker & visual artist (last 5 years)",
+      "creative group head, advertising agencies",
+      "copywriter, advertising agencies",
+      "creative content editor, mobile games (1 year)",
+    ],
+  },
+  {
+    label: "recognition",
+    lines: ["30+ advertising awards"],
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main style={{ padding: "40px 30px", maxWidth: 700 }}>
-        <p style={{ fontSize: 18, lineHeight: 1.6, color: "#000", marginBottom: 48, fontWeight: 400 }}>
-          one-minute microwave rice with tuna eater, weird and strange-named countries traveler, acceptable self-mustache shaver, lonely planet guides reader, 365-days-a-year hawaiian short sleeve shirt wearer and twenty-four-hours-a-day seven-days-a-week thinker.
+      <main className="max-w-[700px] px-[30px] py-10">
+        <p className="mb-12 text-lg leading-relaxed">
+          copywriter turned creative group head turned ai filmmaker. for ten years i wrote the idea — now i
+          make the film too.
         </p>
 
-        <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 13, color: "#000", marginBottom: 8, fontWeight: 400 }}>work</p>
-          <p style={{ fontSize: 13, color: "#000", lineHeight: 1.8, fontWeight: 400 }}>
-            independent senior creative (2024–present)<br />
-            david madrid (2019–2024)<br />
-            lola mullenlowe madrid (2017–2019)
+        <div className="mb-12 text-base leading-relaxed">
+          <p className="mb-4">
+            i spent about a decade in advertising agencies, first as a copywriter, then as a creative group
+            head, building campaign strategy for global and local brands. the work picked up 30+ awards along
+            the way. somewhere in between, i spent a year at a mobile game company as a creative content
+            editor.
           </p>
+          <p className="mb-4">
+            for the last five years i&apos;ve been making things with ai, mostly for fashion brands. i take ai
+            video projects from first idea to final cut, and i turn advertising campaigns into ai productions.
+          </p>
+          <p>the short version: i think like a creative director and produce like a studio.</p>
         </div>
 
-        <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 13, color: "#000", marginBottom: 8, fontWeight: 400 }}>teaching</p>
-          <p style={{ fontSize: 13, color: "#000", lineHeight: 1.8, fontWeight: 400 }}>
-            miami ad school (2025–present)<br />
-            escac catalonia cinema school (2023–2024)<br />
-            the atomic garden school (2020–2022)
-          </p>
-        </div>
-
-        <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 13, color: "#000", marginBottom: 8, fontWeight: 400 }}>contact</p>
-          <p style={{ fontSize: 13, color: "#000", lineHeight: 1.8, fontWeight: 400 }}>
-            jaime.ludena.diaz@gmail.com<br />
-            +34 691 11 20 60<br />
-            +66 098 6322 116
-          </p>
-        </div>
-
-        <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 13, color: "#000", marginBottom: 8, fontWeight: 400 }}>social</p>
-          <p style={{ fontSize: 13, color: "#000", lineHeight: 1.8, fontWeight: 400 }}>
-            <a href="https://linkedin.com/in/jaimeludenadiaz/" style={{ color: "#000", textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
-              linkedin.com/in/jaimeludenadiaz/
-            </a>
-            <br />
-            <a href="https://instagram.com/jaime_ludena/" style={{ color: "#000", textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
-              instagram.com/jaime_ludena/
-            </a>
-          </p>
-        </div>
-
-        <p style={{ fontSize: 13, color: "#000", lineHeight: 1.6, fontWeight: 400 }}>
-          spanish creative/copywriter from getafe (claims madrid). work recognized at cannes lions, d&amp;ad, and the one show.
-        </p>
+        {sections.map((s) => (
+          <div key={s.label} className="mb-10">
+            <p className="mb-2 text-[13px]">{s.label}</p>
+            <p className="text-[13px] leading-[1.8]">
+              {s.lines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
+          </div>
+        ))}
       </main>
     </>
   );

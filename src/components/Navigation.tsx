@@ -25,7 +25,7 @@ export default function Navigation() {
         style={{ fontSize: "13px" }}
       >
         <span className="text-black">oğuzcan önver</span>
-        <span style={{ color: "#ff0000" }}>creative group head / cw</span>
+        <span style={{ color: "#ff0000" }}>ai filmmaker / visual artist</span>
       </Link>
       <nav className="flex gap-5 flex-wrap justify-end" style={{ paddingTop: "2px" }}>
         {navLinks.map(({ label, href }) => (
