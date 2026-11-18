@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
+import VideoEmbed from "@/components/VideoEmbed";
 import { projects, getProject } from "@/data/projects";
 
 export const dynamicParams = false;
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   return {
     title: `${p.title} — oğuzcan önver`,
-    description: p.description,
+    description: p.description.join(" "),
   };
 }
 
@@ -44,17 +45,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
 
-          <p className="m-0 mb-10 max-w-[640px] text-base leading-relaxed">{project.description}</p>
-
-          <div className="relative aspect-video w-full bg-black">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?rel=0`}
-              title={project.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full border-0"
-            />
+          <div className="mb-10 max-w-[640px] text-base leading-relaxed">
+            {project.description.map((para) => (
+              <p key={para} className="m-0 mb-4">
+                {para}
+              </p>
+            ))}
           </div>
+
+          <VideoEmbed project={project} />
 
           <div className="mt-16 text-[13px] leading-[1.8]">
             {others.length > 0 && <p className="m-0 mb-2 text-[#888]">more work</p>}

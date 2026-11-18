@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 export default function WorkGrid() {
   return (
@@ -12,12 +13,19 @@ export default function WorkGrid() {
           style={{ textDecoration: "none" }}
         >
           {/* Background / image */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={project.image}
-            alt={`${project.title} / ${project.client}`}
-            className="w-full h-full object-cover"
-          />
+          {project.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={project.image}
+              alt={`${project.title} / ${project.client}`}
+              className={cn("w-full h-full object-cover", project.imageClass)}
+            />
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center bg-[#f2f2f2] p-4 text-center text-[13px] text-black group-hover:invisible">
+              <span>{project.title}</span>
+              <span>{project.client}</span>
+            </div>
+          )}
 
           {/* Hover overlay */}
           <div
