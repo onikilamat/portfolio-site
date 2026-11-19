@@ -41,6 +41,15 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main className="max-w-[700px] px-[30px] py-10">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/oguzcan.jpg"
+          alt="oğuzcan önver in osaka"
+          width={960}
+          height={1200}
+          className="mb-10 block h-auto w-full max-w-[360px]"
+        />
+
         <p className="mb-12 text-lg leading-relaxed">
           copywriter turned creative group head turned ai filmmaker. for ten years i wrote the idea — now i
           make the film too.
