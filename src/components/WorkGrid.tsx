@@ -21,7 +21,7 @@ export default function WorkGrid() {
               className={cn("w-full h-full object-cover", project.imageClass)}
             />
           ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center bg-[#f2f2f2] p-4 text-center text-[13px] text-black group-hover:invisible">
+            <div className="flex h-full w-full flex-col items-center justify-center bg-[#f2f2f2] p-4 text-center text-[16px] text-black group-hover:invisible">
               <span>{project.title}</span>
               <span>{project.client}</span>
             </div>
@@ -34,13 +34,13 @@ export default function WorkGrid() {
           >
             <span
               className="text-white text-center block"
-              style={{ fontSize: "13px" }}
+              style={{ fontSize: "16px" }}
             >
               {project.title}
             </span>
             <span
               className="text-white text-center block"
-              style={{ fontSize: "13px" }}
+              style={{ fontSize: "16px" }}
             >
               {project.client}
             </span>
